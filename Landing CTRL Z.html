@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escapes da Gen Z — Landing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --purple: #5c0fcb;
+      --gray: #737373;
+      --white: #ffffff;
+      --neon: #66f608;
+      --bg: #07070a;
+      --max-w: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial; background:linear-gradient(180deg,#030305 0%, #0b0b0f 60%);color:var(--white);}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max-w);margin:0 auto;padding:28px}
+
+    /* HERO / KV */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:48px 0}
+    .kv{padding:28px;background:linear-gradient(180deg, rgba(92,15,203,0.12), rgba(0,0,0,0.15));border-radius:12px}
+    .kv h1{font-size:36px;line-height:1.03;margin:0 0 12px;color:var(--white)}
+    .kv p{color:var(--gray);margin:0 0 18px}
+    .kv .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+    .chip{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:999px;font-weight:600;font-size:13px;color:var(--neon);border:1px solid rgba(102,246,8,0.08)}
+    .cta-row{display:flex;gap:12px;align-items:center}
+    .btn{background:var(--neon);color:#071100;padding:12px 18px;border-radius:10px;font-weight:700;border:none;cursor:pointer}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--white)}
+    .kv-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
+    .kv-item{background:rgba(255,255,255,0.02);padding:12px;border-radius:8px}
+    .kv-item h4{margin:0 0 6px;font-size:14px}
+    .kv-item p{margin:0;color:var(--gray);font-size:13px}
+
+    .hero-visual{position:relative;border-radius:14px;overflow:hidden;min-height:360px;background:linear-gradient(120deg, rgba(92,15,203,0.25), rgba(102,246,8,0.06));display:flex;align-items:center;justify-content:center}
+    .hero-visual img{width:100%;height:100%;object-fit:cover;opacity:0.5;}
+    .hero-visual .badge{position:absolute;left:18px;top:18px;background:rgba(0,0,0,0.45);padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.04)}
+
+    /* slogan bar */
+    .slogan{margin:28px 0;padding:18px;border-radius:10px;background:linear-gradient(90deg,var(--purple),rgba(92,15,203,0.35));text-align:center}
+    .slogan h2{margin:0;font-size:20px}
+
+    /* Sections */
+    section.module{padding:42px 0;border-radius:10px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:rgba(255,255,255,0.02);padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+    .card h3{margin:0 0 8px}
+    .card p{margin:0;color:var(--gray)}
+
+    /* reportagem / podcast / mini doc */
+    .media{display:flex;gap:18px;align-items:stretch}
+    .media .left{flex:1}
+    .media .right{width:360px}
+    .media .player{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.1)}
+
+    /* social CTA */
+    .follow{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:18px;border-radius:10px;background:rgba(255,255,255,0.02)}
+    .socials{display:flex;gap:12px}
+    .socials a{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
+
+    footer{padding:24px 0;color:var(--gray);text-align:center;font-size:13px}
+
+    /* Pop-up de saída */
+    #exitPopup {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+    }
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .hero-visual{min-height:220px}
+      .grid-3{grid-template-columns:1fr}
+      .media{flex-direction:column}
+      .media .right{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- HERO / KV -->
+    <header class="hero" id="home">
+      <div class="kv">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px">
+          <div style="width:10px;height:10px;border-radius:50%;background:var(--neon)"></div>
+          <small style="color:var(--neon);font-weight:700;font-size:12px">CTRL Z — Escapes da Gen Z</small>
+        </div>
+        <h1>Escapes da Gen Z: fuga da realidade mental</h1>
+        <p>Como jovens buscam alívio e soluções fora dos canais tradicionais — redes sociais, jogos, esportes, inteligências artificiais e autodiagnóstico. Reportagem, podcast e um mini doc para entender o fenômeno.</p>
+
+        <div class="chips">
+          <span class="chip">Redes Sociais</span>
+          <span class="chip">Games</span>
+          <span class="chip">Esportes</span>
+          <span class="chip">IAs</span>
+          <span class="chip">Autodiagnóstico</span>
+        </div>
+
+        <div class="cta-row">
+          <button class="btn" onclick="scrollToSection('report')">Quero ver a reportagem</button>
+          <button class="btn ghost" onclick="scrollToSection('podcast')">Ouça o podcast</button>
+        </div>
+
+        <div class="kv-list" style="margin-top:18px">
+          <div class="kv-item"><h4>Formato</h4><p>Reportagem, Mini Doc e Podcast Narrativo</p></div>
+          <div class="kv-item"><h4>Público</h4><p>Geração Z e Millennials (16–26)</p></div>
+          <div class="kv-item"><h4>Tema-chave</h4><p>Autodiagnóstico & Fuga mental</p></div>
+          <div class="kv-item"><h4>Objetivo</h4><p>Informar, prevenir e direcionar para ajuda profissional</p></div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <img src="sticker-2-ctrl-z.png" alt="referência visual"/>
+        <div class="badge">Referência visual</div>
+      </div>
+    </header>
+
+    <!-- Slogan bar -->
+    <div class="slogan"><h2>Tudo o que você precisa para entender o escape: Reportagem • Podcast • Mini Doc</h2></div>
+
+    <!-- Reportagem -->
+    <section id="report" class="module">
+      <div class="container">
+        <h2 style="margin:0 0 12px;color:var(--neon)">Reportagem</h2>
+        <div class="media">
+          <div class="left">
+            <div class="card">
+              <h3>Auto Diagnóstico — o perigo de procurar respostas sozinho</h3>
+              <p>Uma reportagem aprofundada sobre jovens que recorrem a IAs, fóruns e redes para diagnosticar condições como ansiedade, TDAH e autismo — e os riscos desse comportamento sem acompanhamento profissional.</p>
+              <p style="margin-top:12px;color:var(--gray)"><strong>Principais tópicos:</strong> fontes não confiáveis, efeito bola de neve, impacto na procura por ajuda profissional.</p>
+              <div style="margin-top:12px;display:flex;gap:10px">
+                <button class="btn" onclick="openModal('reportModal')">Ler reportagem</button>
+                <a class="btn ghost" href="#podcast">Ir para podcast</a>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="player">
+              <strong>Resumo rápido</strong>
+              <p style="color:var(--gray);margin:8px 0 0">Duração: leitura longa (≈8 min). Fonte: entrevistas com especialistas, jovens e moderadores de comunidades online.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Podcast -->
+    <section id="podcast" class="module">
+      <div class="container">
+        <h2 style="margin:0 0 12px;color:var(--neon)">Podcast Narrativa</h2>
+        <div class="card">
+          <h3>Terapia com Hailee</h3>
+          <p>Um episódio narrativo que acompanha Hailee, uma jovem tentando entender se precisa de ajuda profissional. O episódio explora o fenômeno do autodiagnóstico e as formas de escape usadas pela Gen Z.</p>
+
+          <div style="margin-top:14px;display:flex;gap:12px;align-items:center">
+            <button class="btn" onclick="playSample()">Ouvir trecho</button>
+            <button class="btn ghost" onclick="openModal('podcastModal')">Ver roteiro</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mini Doc -->
+    <section id="minidoc" class="module">
+      <div class="container">
+        <h2 style="margin:0 0 12px;color:var(--neon)">Mini Doc</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Loop — Mostrar o problema</h3>
+            <p>Mini documentário que ilustra o loop mental: busca por respostas nas redes, reforço negativo, isolamento e retorno à busca — um ciclo que dificulta o acesso a ajuda real.</p>
+          </div>
+
+          <div class="card">
+            <h3>Formas de escape</h3>
+            <p>Como games, esportes e redes sociais se tornam válvulas de escape — quando deixam de ser saudáveis e se tornam evitamento.</p>
+          </div>
+
+          <div class="card">
+            <h3>Como ajudar</h3>
+            <p>Recursos de triagem, contatos profissionais e orientação para famílias. Passos práticos para quando perceber um amigo em risco.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;text-align:center">
+          <button class="btn" onclick="openModal('docModal')">Assistir Mini Doc</button>
+        </div>
+      </div>
+    </section>
+    <!-- Social CTA -->
+    <section id="social" class="module">
+      <div class="container">
+        <h2 style="margin:0 0 12px;color:var(--neon)">Nossa rede</h2>
+        <div class="follow">
+          <div>
+            <h3 style="margin:0 0 6px">Siga-nos para não perder novos episódios e conteúdo</h3>
+            <p style="margin:0;color:var(--gray)">Conteúdos exclusivos, lives com especialistas e material de apoio.</p>
+          </div>
+          <div class="socials">
+            <a href="#" onclick="event.preventDefault();alert('Abrir Instagram')">Instagram</a>
+            <a href="#" onclick="event.preventDefault();alert('Abrir YouTube')">YouTube</a>
+            <a href="#" onclick="event.preventDefault();alert('Abrir Spotify')">Spotify</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pop-up de saída -->
+    <div id="exitPopup">
+      <div style="background:linear-gradient(135deg, #5c0fcb, #66f608); padding:28px; border-radius:18px; color:#fff; max-width:420px; width:90%; text-align:center; box-shadow:0 0 25px rgba(92,15,203,0.6);">
+        <h2 style="margin:0 0 12px; font-size:22px;">⚡ Espere um pouco!</h2>
+        <p style="margin:0 0 18px; font-size:15px; color:#071100; font-weight:600;">
+          Antes de sair, siga a <strong>CTRL Z</strong> para receber os próximos conteúdos exclusivos.
+        </p>
+        <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+          <a href="#" onclick="alert('Abrir Instagram')" style="padding:10px 16px; border-radius:10px; background:#fff; color:#5c0fcb; font-weight:700; text-decoration:none;">Instagram</a>
+          <a href="#" onclick="closeExitPopup()" style="padding:10px 16px; border-radius:10px; background:rgba(255,255,255,0.2); color:#fff; font-weight:600; text-decoration:none;">Continuar no site</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">© 2025 CTRL Z — Projeto experimental sobre a Geração Z. Material informativo — não substitui orientação profissional.</div>
+    </footer>
+  </div>
+
+  <!-- Modals and simple JS -->
+  <div id="modals" aria-hidden="true"></div>
+  <script>
+    function scrollToSection(id){
+      document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});
+    }
+
+    function openModal(id){
+      const modals = document.getElementById('modals');
+      modals.innerHTML = `
+        <div style="position:fixed;inset:0;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;z-index:9999">
+          <div style="max-width:900px;width:95%;background:#09090b;padding:22px;border-radius:12px;position:relative;color:var(--white)">
+            <button style="position:absolute;right:12px;top:12px;padding:8px;border-radius:6px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white)" onclick="closeModal()">Fechar</button>
+            <h3 style="color:var(--neon)">Conteúdo</h3>
+            <p style="color:var(--gray)">Aqui você pode colocar o conteúdo completo: link para a reportagem, o episódio do podcast ou o vídeo do mini doc. Este modal é um exemplo — substitua pelo conteúdo real.</p>
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <a class="btn" href="#">Abrir</a>
+              <a class="btn ghost" href="#">Baixar resumo</a>
+            </div>
+          </div>
+        </div>
+      `;
+      modals.setAttribute('aria-hidden','false');
+    }
+
+    function closeModal() {
+      document.getElementById('modals').innerHTML = '';
+      document.getElementById('modals').setAttribute('aria-hidden','true');
+    }
+
+    function playSample() {
+      alert('Amostra do podcast tocando...');
+    }
+
+    // Sistema de pop-up de saída
+    let exitPopupShown = false;
+    let mouseMoved = false;
+
+    document.addEventListener("mousemove", function () {
+      if (!mouseMoved) {
+        mouseMoved = true;
+      }
+    });
+
+    document.addEventListener("mouseleave", function (e) {
+      if (!exitPopupShown && mouseMoved && e.clientY <= 0) {
+        showExitPopup();
+        exitPopupShown = true;
+      }
+    });
+
+    function showExitPopup() {
+      document.getElementById("exitPopup").style.display = "flex";
+    }
+
+    function closeExitPopup() {
+      document.getElementById("exitPopup").style.display = "none";
+    }
+  </script>
+</body>
+</html>
